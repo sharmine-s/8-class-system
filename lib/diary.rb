@@ -1,13 +1,16 @@
 class Diary
   def initialize
+    @diary_entries = []
   end
 
   def add(entry) # entry is an instance of DiaryEntry
-    # Returns nothing
+    fail "Entry should be an instance of DiaryEntry" unless entry.is_a? DiaryEntry
+    @diary_entries << entry
   end
 
   def all
     # Returns a list of instances of DiaryEntry
+    return @diary_entries
   end
 
   def count_words

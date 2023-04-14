@@ -52,3 +52,7 @@ For complex challenges you might want to come up with a list of examples first a
 
     Then return to step 3 until you have addressed the problem you were given. You may also need to revise your design, for example if you realise you made a mistake earlier.
 
+
+# Questions
+1. Why does the fail case recognize the DiaryEntry instance but when running the code in the Diary file, it doesn't allow us to create a variable of instance DiaryEntry?
+2. 
