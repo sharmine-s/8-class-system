@@ -1,8 +1,8 @@
 Single-Class Programs Design Recipe
+
 1. Describe the Problem
 
-Typically you will be given a short statement that does this called a user story. In industry, you may also need to ask further questions to clarify aspects of the problem.
-2. Design the Class Interface
+Typically you will be given a short statement that does this called a user story. In industry, you may also need to ask further questions to clarify aspects of the problem. 2. Design the Class Interface
 
 The interface of a class includes:
 
@@ -14,8 +14,7 @@ The interface of a class includes:
         What they return and that data type
         Any side effects they might have.
 
-Steps 3 and 4 then operate as a cycle.
-3. Create Examples as Tests
+Steps 3 and 4 then operate as a cycle. 3. Create Examples as Tests
 
 DiaryEntry
 title => "Day 1"
@@ -34,11 +33,16 @@ second_diary_entry = DiaryEntry.new("Day 2", "Using VSCode")
 diary = Diary.new
 diary.add(diary_entry) => returns nothing
 diary.add(second_diary_entry)
-diary.all => [ 
-  "Day 1", "Learning to design a class system"
-  "Day 2", "Using VSCode"
-]
-# need to test and see what these isntances would look like
+diary.all => [diary_entry, second_diary_entry]
+
+count_words
+Iterate over @diary_entries array and call count_words on each adding each to total_word_count
+diary_entry = DiaryEntry.new("Day 1", "Learning to design a class system")
+second_diary_entry = DiaryEntry.new("Day 2", "Using VSCode")
+diary = Diary.new
+diary.add(diary_entry)
+diary.add(second_diary_entry)
+diary.count_words => 8
 
 These are examples of the class being used with different initializer arguments, method calls, and how it should behave.
 
@@ -52,7 +56,7 @@ For complex challenges you might want to come up with a list of examples first a
 
     Then return to step 3 until you have addressed the problem you were given. You may also need to revise your design, for example if you realise you made a mistake earlier.
 
-
 # Questions
+
 1. Why does the fail case recognize the DiaryEntry instance but when running the code in the Diary file, it doesn't allow us to create a variable of instance DiaryEntry?
-2. 
+2.

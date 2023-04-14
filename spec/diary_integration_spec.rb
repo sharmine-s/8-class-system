@@ -26,4 +26,15 @@ RSpec.describe "Diary Integration" do
     result = diary.all
     expect(result).to eq [diary_entry, second_diary_entry]
   end
+
+  it "counts the total number of words of all diary entries" do
+    diary_entry = DiaryEntry.new("Day 1", "Learning to design a class system")
+    second_diary_entry = DiaryEntry.new("Day 2", "Using VSCode")
+    diary = Diary.new
+    diary.add(diary_entry)
+    diary.add(second_diary_entry)
+    expect(diary.count_words).to eq 8
+  end
+
+
 end

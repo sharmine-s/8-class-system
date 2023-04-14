@@ -16,6 +16,11 @@ class Diary
   def count_words
     # Returns the number of words in all diary entries
     # HINT: This method should make use of the `count_words` method on DiaryEntry.
+    total_word_count = 0
+    @diary_entries.each do |entry|
+      total_word_count += entry.count_words
+    end
+    total_word_count
   end
 
   def reading_time(wpm) # wpm is an integer representing
