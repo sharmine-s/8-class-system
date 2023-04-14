@@ -22,7 +22,23 @@ title => "Day 1"
 contents => "Learning to design a class system"
 count_words => 6
 reading_time(2) => 3
-reading_chunk(2, 1) => 
+reading_chunk(200, 1) => "Learning to design a class system"
+
+reading_chunk(2, 1) => "Learning a"
+reading_chunk(4, 1) => "design a class system"
+reading_chunk(2, 1) => "Learning a"
+
+Diary
+diary_entry = DiaryEntry.new("Day 1", "Learning to design a class system")
+second_diary_entry = DiaryEntry.new("Day 2", "Using VSCode")
+diary = Diary.new
+diary.add(diary_entry) => returns nothing
+diary.add(second_diary_entry)
+diary.all => [ 
+  "Day 1", "Learning to design a class system"
+  "Day 2", "Using VSCode"
+]
+# need to test and see what these isntances would look like
 
 These are examples of the class being used with different initializer arguments, method calls, and how it should behave.
 
