@@ -27,6 +27,7 @@ class Diary
                         # the number of words the user can read per minute
     # Returns an integer representing an estimate of the reading time in minutes
     # if the user were to read all entries in the diary.
+    fail "No diary entries" if @diary_entries.empty?
     total_reading_time = 0
     @diary_entries.each do |entry|
       total_reading_time += entry.reading_time(wpm)
@@ -35,6 +36,7 @@ class Diary
   end
 
   def find_best_entry_for_reading_time(wpm, minutes)
+    fail "No diary entries" if @diary_entries.empty?
     words = wpm * minutes
     returns = @diary_entries[0]
     difference = words

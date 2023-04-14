@@ -69,5 +69,14 @@ RSpec.describe "Diary Integration" do
   end
 
   # need to test for when there are no diary entries
+  it "fails reading_time when no diary entries" do
+    diary = Diary.new
+    expect { diary.reading_time(200) }.to raise_error "No diary entries"
+  end
+
+  it "fails find_best_entry_for_reading_time when no diary entries" do
+    diary = Diary.new
+    expect { diary.find_best_entry_for_reading_time(200, 1) }.to raise_error "No diary entries"
+  end
 
 end
