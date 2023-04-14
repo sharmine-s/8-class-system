@@ -36,5 +36,15 @@ RSpec.describe "Diary Integration" do
     expect(diary.count_words).to eq 8
   end
 
+  it "gives the total reading time for all diary entries" do
+    diary_entry = DiaryEntry.new("Day 1", "Learning to design a class system")
+    second_diary_entry = DiaryEntry.new("Day 2", "Using VSCode")
+    diary = Diary.new
+    diary.add(diary_entry)
+    diary.add(second_diary_entry)
+    result = diary.reading_time(2)
+    expect(result).to eq 4
+  end
+
 
 end
